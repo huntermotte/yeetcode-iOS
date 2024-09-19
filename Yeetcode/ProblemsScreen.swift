@@ -30,6 +30,7 @@ struct ProblemsScreen: View {
                 })
         }
         .navigationTitle("Problems")
+        .navigationBarBackButtonHidden(true)
         .onAppear {
             problemModel.fetch()
         }
