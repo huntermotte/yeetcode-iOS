@@ -7,6 +7,8 @@
 import SwiftUI
 
 struct SecondScreen: View {
+    @Binding var path: NavigationPath
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -26,7 +28,7 @@ struct SecondScreen: View {
                 .padding()
             
             NavigationLink(
-                destination: Text("hello world"),
+                destination: LogoutButton(path: $path),
                 label: {
                     ContinueButton(color: .pink)
                 })

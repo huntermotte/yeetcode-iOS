@@ -11,7 +11,7 @@ import SwiftUI
 struct YeetcodeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Login()
         }
     }
 }

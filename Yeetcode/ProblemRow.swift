@@ -38,5 +38,5 @@ struct ProblemRow: View {
 }
 
 #Preview {
-    ContentView()
+    Login()
 }
