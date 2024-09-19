@@ -28,7 +28,7 @@ struct ProblemRow: View {
                     .fill(Color(UIColor.systemBackground))
                     .cornerRadius(12)
                     .shadow(
-                        color: Color.gray.opacity(0.5),
+                        color: Color.gray.opacity(0.4),
                         radius: 8,
                         x: 0,
                         y: 0
