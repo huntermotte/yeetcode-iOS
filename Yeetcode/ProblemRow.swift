@@ -14,15 +14,15 @@ struct ProblemRow: View {
         HStack {
             Text(name)
                 .bold()
-                .frame(width: 200, alignment: .leading)
+                .frame(width: 175, height: 65, alignment: .leading)
                 .padding()
             
             Spacer()
             
-            Text(difficulty)
+            Text(difficulty.capitalized)
                 .padding()
         }
-        .frame(width: 350, height: 60)
+        .frame(width: 330, height: 60)
         .padding().background(
                 Rectangle()
                     .fill(Color(UIColor.systemBackground))
