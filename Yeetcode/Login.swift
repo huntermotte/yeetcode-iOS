@@ -9,10 +9,21 @@ import SwiftUI
 
 struct Login: View {
     @State private var path = NavigationPath()
+    @StateObject private var viewModel = AuthenticationViewModel()
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
+                
+                Button(action: {
+                    signInWithGoogle()
+                }) {
+                    GoogleSignInButton()
+                        .frame(width: 280, height: 45)
+                        .padding()
+                }
+                
                 Button {
                 } label: {
                     NavigationLink("Sign in with Google", value: "google")
@@ -32,6 +43,14 @@ struct Login: View {
              .navigationTitle("Login")
         }
     }
+    
+    private func signInWithGoogle() {
+        Task {
+          if await viewModel.signInWithGoogle() == true {
+            dismiss()
+          }
+        }
+      }
 }
 
 #Preview {
