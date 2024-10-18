@@ -8,13 +8,14 @@ import SwiftUI
 
 struct SecondScreen: View {
     @Binding var path: NavigationPath
+    @State var id: Int
     
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(String(id))
             Image(systemName: "bell")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

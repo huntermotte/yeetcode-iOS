@@ -14,20 +14,26 @@ struct ProblemsScreen: View {
         VStack {
         
             ForEach(problemModel.problems, id: \.self) { problem in
-                ProblemRow(
-                    name: problem.name,
-                    difficulty: problem.difficulty
-                )
-                .padding(3)
+                NavigationLink(
+                    destination: SecondScreen(path: $path, id: problem.id),
+                    label: {
+                        ProblemRow(
+                            name: problem.name,
+                            difficulty: problem.difficulty
+                        )
+                        .padding(3)
+                    })
+                .buttonStyle(PlainButtonStyle())
+                
             }
             
             Spacer()
             
-            NavigationLink(
-                destination: SecondScreen(path: $path),
-                label: {
-                    ContinueButton(color: .mint)
-                })
+//            NavigationLink(
+//                destination: SecondScreen(path: $path),
+//                label: {
+//                    ContinueButton(color: .mint)
+//                })
         }
         .navigationTitle("Problems")
         .navigationBarBackButtonHidden(true)
@@ -36,3 +42,7 @@ struct ProblemsScreen: View {
         }
     }
 }
+
+//#Preview {
+//    ProblemsScreen(ProblemModel(), NavigationPath())
+//}

@@ -158,6 +158,7 @@ extension AuthenticationViewModel {
         let user = userAuthentication.user
         guard let idToken = user.idToken else { throw AuthenticationError.tokenError(message: "ID token missing") }
         let accessToken = user.accessToken
+          print("Id token is \(idToken.tokenString)")
 
         let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString,
                                                        accessToken: accessToken.tokenString)
